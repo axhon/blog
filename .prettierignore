@@ -1,0 +1,5 @@
+.cache
+api/build
+app/build
+node_modules
+public/build

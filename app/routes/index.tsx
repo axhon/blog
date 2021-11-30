@@ -1,5 +1,5 @@
-import type { MetaFunction, LoaderFunction } from "remix";
-import { useLoaderData, json, Link } from "remix";
+import type { LoaderFunction, MetaFunction } from "remix";
+import { json, Link, useLoaderData } from "remix";
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>;
@@ -15,31 +15,31 @@ export let loader: LoaderFunction = () => {
     resources: [
       {
         name: "Remix Docs",
-        url: "https://remix.run/docs"
+        url: "https://remix.run/docs",
       },
       {
         name: "React Router Docs",
-        url: "https://reactrouter.com/docs"
+        url: "https://reactrouter.com/docs",
       },
       {
         name: "Remix Discord",
-        url: "https://discord.gg/VBePs6d"
-      }
+        url: "https://discord.gg/VBePs6d",
+      },
     ],
     demos: [
       {
         to: "demos/actions",
-        name: "Actions"
+        name: "Actions",
       },
       {
         to: "demos/about",
-        name: "Nested Routes, CSS loading/unloading"
+        name: "Nested Routes, CSS loading/unloading",
       },
       {
         to: "demos/params",
-        name: "URL Params and Error Boundaries"
-      }
-    ]
+        name: "URL Params and Error Boundaries",
+      },
+    ],
   };
 
   // https://remix.run/api/remix#json
@@ -50,7 +50,7 @@ export let loader: LoaderFunction = () => {
 export let meta: MetaFunction = () => {
   return {
     title: "Remix Starter",
-    description: "Welcome to remix!"
+    description: "Welcome to remix!",
   };
 };
 
@@ -78,8 +78,8 @@ export default function Index() {
       <aside>
         <h2>Demos In This App</h2>
         <ul>
-          {data.demos.map(demo => (
-            <li key={demo.to} >
+          {data.demos.map((demo) => (
+            <li key={demo.to}>
               <Link to={demo.to} prefetch="intent">
                 {demo.name}
               </Link>
@@ -88,8 +88,8 @@ export default function Index() {
         </ul>
         <h2>Resources</h2>
         <ul>
-          {data.resources.map(resource => (
-            <li key={resource.url} >
+          {data.resources.map((resource) => (
+            <li key={resource.url}>
               <a href={resource.url}>{resource.name}</a>
             </li>
           ))}
