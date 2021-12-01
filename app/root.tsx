@@ -9,11 +9,12 @@ import {
   ScrollRestoration,
   useCatch,
 } from "remix";
+import type { ReactNode } from "react";
 
 import appStyles from "~/styles/app.css";
 
 // https://remix.run/api/app#links
-export let links: LinksFunction = () => {
+export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
@@ -56,7 +57,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
 
 // https://remix.run/docs/en/v1/api/conventions#catchboundary
 export function CatchBoundary() {
-  let caught = useCatch();
+  const caught = useCatch();
 
   let message;
   switch (caught.status) {
@@ -94,7 +95,7 @@ function Document({
   children,
   title,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   title?: string;
 }) {
   return (
@@ -116,7 +117,7 @@ function Document({
   );
 }
 
-function Layout({ children }: { children: React.ReactNode }) {
+function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="dark">
       <header>
