@@ -37,5 +37,11 @@ module.exports = {
 
     //  react 17 lol
     "react/react-in-jsx-scope": "off",
+
+    // this is a bit too aggressive
+    "prefer-const": "off",
+
+    // mutable exports aren't a thing, disable them
+    "import/no-mutable-exports": "off",
   },
 };
