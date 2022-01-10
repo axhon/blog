@@ -60,7 +60,7 @@ export default function Index() {
 
   return (
     <div className="dark:bg-black">
-      <main className="flex flex-col-reverse dark:text-white">
+      <main className="flex flex-col-reverse dark:text-white h-[-23px]">
         <h2>Welcome to Remix!</h2>
         <p>We're stoked that you're here. 🥳</p>
         <p>
