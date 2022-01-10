@@ -56,7 +56,7 @@ export let meta: MetaFunction = () => {
 
 // https://remix.run/guides/routing#index-routes
 export default function Index() {
-  let data = useLoaderData<IndexData>();
+  let data: IndexData = useLoaderData<IndexData>();
 
   return (
     <div className="dark:bg-black">
